@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactanos</title>
+    <link rel="icon" href="../asets/Img/logo11.png" type="image/png">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
@@ -14,7 +16,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="../index.html">
+                <a class="navbar-brand" href="#">
                     <img src="../asets/Img/logo11.png" alt="" width="50" height="50">
                     <a class="navbar-brand text-dark" href="">Contectanos</a>
                 </a>
@@ -23,9 +25,7 @@
               </button>
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ms-auto">
-                  <a class="nav-link " aria-current="page" href="../index.html">Inicio</a>
-                  <a class="nav-link" aria-current="page" href="productos.html">Productos</a>
-                  <a class="nav-link active" href="contactanos.html">Contacto</a>
+                  <a class="nav-link" aria-current="page" href="#" onclick="cerrarSesion()">Cerrar sesion</a>
                 </div>
               </div>
             </div>
@@ -41,32 +41,35 @@
             <!-- FORMULARIO DE CONTACTO -->
             <div class="col-lg-6 my-3">
               <p>Envíanos un mensaje para cualquier consulta o sugerencia.</p>
-              <form class="bg-light my-3 py-3">
+              <form method="post" class="bg-light my-3 py-3" id="form">
                 <div class="mb-3">
-                  <label for="name" class="form-label">Nombre completo</label>
-                  <input type="text" class="form-control" id="name" placeholder="Escribe tu nombre completo">
+                  <label for="name" class="form-label">Nombre</label>
+                  <input type="text" class="form-control" id="name" required placeholder="Escribe tu nombre">
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">Correo electrónico</label>
-                  <input type="email" class="form-control" id="email" placeholder="Escribe tu correo electrónico">
+                  <input type="email" class="form-control" id="email" required placeholder="Ej. 123@ejemplo.com">
                 </div>
                 <div class="mb-3">
                   <label for="message" class="form-label">Mensaje</label>
-                  <textarea class="form-control" id="message" rows="3" placeholder="Escribe tu mensaje"></textarea>
+                  <textarea class="form-control" id="message" rows="3" required placeholder="Escribe tu mensaje"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                <input type="submit" class="btn btn-primary" id="submitBtn">
               </form>
             </div>
             <!-- REDES SOCIALES -->
             <div class="col-lg-6 text-center my-3">
               <p>También puedes encontrarnos en nuestras redes sociales.</p>
               <ul class="list-inline d-flex justify-content-center">
-                <li class="list-inline-item"><a href="#">Facebook</a></li>
-                <li class="list-inline-item"><a href="#">Instagram</a></li>
-                <li class="list-inline-item"><a href="#">Twitter</a></li>
+                <h2><li class="list-inline-item"><a href="#" target="_blank"><i class="bi bi-facebook"></i></a></li></h2>
+                <h2><li class="list-inline-item mx-3"><a href="#" target="_blank"><i class="bi bi-instagram"></i></a></li></h2>
+                <h2><li class="list-inline-item"><a href="http://wa.me/5491124848969" target="_blank"><i class="bi bi-whatsapp"></i></i></a></li></h2>
+                
+                
               </ul>
               <div class="container my-3">
                 <!-- ALUMNOS -->
+                <!-- PRIMER ALUMNO -->
                 <div class="d-flex align-items-center col-12 justify-content-center">
                   <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center m-3" style="width: 90px; height: 90px;">
                     <span class="h5 mb-0 font-weight-bold">
@@ -78,6 +81,7 @@
                     <p class="text-muted mb-0">Descripción del alumno</p>
                   </div>
                 </div>
+                <!-- SEGUNDO ALUMNO -->
                 <div class="d-flex align-items-center col-12 justify-content-center">
                   <div>
                     <h5 class="mb-0">Segundo Alumno</h5>
@@ -89,6 +93,7 @@
                     </span>
                   </div>
                 </div>
+                <!-- TERCER ALUMNO -->
                 <div class="d-flex align-items-center col-12 justify-content-center">
                   <div class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center m-3" style="width: 90px; height: 90px;">
                     <span class="h5 mb-0 font-weight-bold">
@@ -119,6 +124,39 @@
     </footer>
 
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/cerrarSesion.js"></script>
+
+    <script>
+      // Obtener referencias a los elementos del formulario
+      const form = document.getElementById('form');
+      const nameInput = document.getElementById('name');
+      const emailInput = document.getElementById('email');
+      const messageInput = document.getElementById('message');
+      const submitBtn = document.getElementById('submitBtn');
+  
+      // Agregar evento para el botón de enviar
+      submitBtn.addEventListener('click', (event) => {
+          event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+  
+          // Obtener valores del formulario
+          const name = nameInput.value;
+          const email = emailInput.value;
+          const message = messageInput.value;
+
+          // Validar que los campos no estén vacíos
+          if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+            alert('Por favor completa todos los campos.');
+            return;
+          }
+  
+          // Aquí iría el código para enviar el mensaje a través de Gmail o Mailgun
+  
+          // Mostrar mensaje de confirmación
+          alert(`¡Gracias ${name}! Tu mensaje ha sido enviado correctamente y nos pondremos en contacto contigo a la brevedad.`);
+          form.reset();
+          location.reload();
+          });
+  </script>
 
 </body>
 
