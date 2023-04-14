@@ -12,4 +12,7 @@ Ana: 1234
 juan: abcd
 María: 5678
 pedro: efgh
+
+Los nombres son todos con minusculas y sin acentos, y la primer contraseña es con doble n   y sin acento 
+
 ¡Gracias por visitar mi página web!
