@@ -7,12 +7,11 @@ La página incluye un sistema de inicio de sesión que valida a los usuarios alm
 
 El objetivo de esta página es simular una tienda en línea de venta de relojes. Para iniciar sesión y probar la página, se pueden utilizar los siguientes usuarios:
 
-leandro: maná
-Ana: 1234
-juan: abcd
-María: 5678
+leandro: manna, 
+ana: 1234, 
+juan: abcd, 
+maría: 5678, 
 pedro: efgh
 
-Los nombres son todos con minusculas y sin acentos, y la primer contraseña es con doble n   y sin acento 
 
 ¡Gracias por visitar mi página web!
