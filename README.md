@@ -11,7 +11,9 @@ leandro: manna,
 ana: 1234, 
 juan: abcd, 
 maría: 5678, 
-pedro: efgh
+pedro: efgh.
+
+la primer contraseña es en minuscula, sin acento y con doble n
 
 
 ¡Gracias por visitar mi página web!
