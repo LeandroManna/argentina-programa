@@ -21,6 +21,9 @@ function validate() {
 	}
 	// Redirigir a la página de contacto o mostrar mensaje de error
 	if (valid) {
+		// Establecer una variable en el almacenamiento local que indica que el usuario está logueado
+		localStorage.setItem("usuarioLogueado", "true");
+		
 		window.location.href = "../paginas/contactanos.html";
 	} else {
 		alert("Credenciales incorrectas. Intente nuevamente.");
